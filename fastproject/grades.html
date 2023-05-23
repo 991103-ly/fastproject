@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acorn.utoronto.ca</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./iconfont.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="container">
+
+            <div class="title">
+                <div class="title-left">
+                    <svg class="icon" aria-hidden="true" color="white" @click="openFun()"
+                        style="color:white;font-size:24px;margin-left:8px;margin-right: 80px;">
+                        <use xlink:href="#icon-ego-menu"></use>
+                    </svg>
+                </div>
+                <div class="title-center">
+                    <div style="background-color: rgb(49, 124, 176);
+                color: white;
+                height: 40px;
+                border-radius: 6px;
+                text-align: center;
+                line-height: 40px;
+                width: 108px;
+                margin-right: 16px;">Need Help?</div>
+                </div>
+                <div class="title-right">
+                    <div style="background-color: rgb(49, 124, 176);
+                color: white;  color: white;
+                height: 40px;
+                border-radius: 6px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 20px;
+                width: 36px;
+                position: relative;
+                margin-right: 16px;">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xiaoxitongzhitixinglingshenglingdang"></use>
+                        </svg>
+                        <div style="height: 16px;width:16px;border-radius: 50%;color: white;background-color: #3F8AF8; text-align: center;line-height: 16px;position: absolute;font-size: 10px;    top: -3px;
+                        right: -6px;">
+                            2</div>
+                    </div>
+                </div>
+                <div class="title-name" style="color:white;display: flex;align-items: center;">
+                    <div style="margin-right: 6px;">Shunhan Luan</div>
+                    <div class="triangle"></div>
+                    </svg>
+                </div>
+            </div>
+            <div
+                style="background-color: rgb(246,246,246);width: 100%;padding-left: 8px;padding-right: 8px;box-sizing: border-box;">
+                <div style="height: 16px;background-color: #fff;"></div>
+                <div style="width: 100%; background-color: rgb(240, 240, 240);">
+                    <div
+                        style="display: flex; justify-content: space-between;align-items: center;border-bottom: 0.5px solid gray; padding-top: 8px;padding-bottom: 8px;font-size: 15px;margin-bottom: 8px;">
+                        <h5>Sessional GPA:</h5> 3.16
+                        <h5>Annual GPA:</h5> 3.31
+                        <h5>Cumulative GPA:</h5> 3.46
+                    </div>
+                    <div v-for="item in gradesarr"
+                        style="box-sizing: border-box;padding-left: 24px; border-bottom: 1px solid gray; margin-bottom: 8px;margin-top: 8px;padding-bottom: 8px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <div>{{item.code}}</div>
+                        <div>{{item.title}}</div>
+                        <div>Weight: {{item.weight}}</div>
+                        <div>Mark: {{item.Mark}}</div>
+                        <div>Grade: {{item.grade}}</div>
+                        <div>Course Average: {{item.CourseAverage}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                gradesarr: [
+                    { code: 'EESA10H3', title: 'Human Health and the', weight: 0.5, Mark: 80, grade: 'A-', CourseAverage: 'B-' },
+                    { code: 'MGEB06H3', title: 'Macroeconomic Theory and', weight: 0.5, Mark: 71, grade: 'B-', CourseAverage: 'C' },
+                    { code: 'MGEB12H3', title: 'Quantitative Methods in', weight: 0.5, Mark: 82, grade: 'A-', CourseAverage: 'C' },
+                    { code: 'MGFB10H3', title: 'Principles of Finance', weight: 0.5, Mark: 70, grade: 'B-', CourseAverage: 'C+' },
+                    { code: 'MGHB12H3', title: 'Human Resource Management', weight: 0.5, Mark: 73, grade: 'B', CourseAverage: 'B-' },
+                ]
+            },
+            methods: {
+            }
+        })
+    </script>
+    <style>
+        .triangle {
+            width: 0;
+            height: 0;
+            border-top: 5px solid white;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        .title {
+            background-color: #113A70;
+            height: 68px;
+            display: flex;
+            align-items: center;
+        }
+
+        .title-left {}
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #app {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .virtual {
+            background-color: white;
+            height: 9.3%;
+        }
+    </style>
+</body>
+
+</html>
